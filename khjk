@@ -1,0 +1,25 @@
+
+import random
+
+ace_value = 11
+
+card_option = {"[A]":ace_value, "[2]":2, "[3]":3, "[4]":4, "[5]":5, "[6]":6, "[7]":7, "[8]":8, "[9]":9,"[10]":10, "[J]":10, "[Q]":10, "[K]":10, "[A]":ace_value, "[2]":2, "[3]":3, "[4]":4, "[5]":5, "[6]":6, "[7]":7, "[8]":8, "[9]":9,"[10]":10, "[J]":10, "[Q]":10, "[K]":10, "[A]":ace_value, "[2]":2, "[3]":3, "[4]":4, "[5]":5, "[6]":6, "[7]":7, "[8]":8, "[9]":9,"[10]":10, "[J]":10, "[Q]":10, "[K]":10, "[A]":ace_value, "[2]":2, "[3]":3, "[4]":4, "[5]":5, "[6]":6, "[7]":7, "[8]":8, "[9]":9,"[10]":10, "[J]":10, "[Q]":10, "[K]":10}
+card = list(card_option.keys())
+
+def place_bet (bet): 
+  wallet = 2000
+  while int(bet) > wallet:
+    bet = input ("You do not have the money to make this bet. Bet again!\n$")
+  if int(bet) <= wallet:
+    wallet = wallet - int(bet)
+    return "Good bet! Let's see how this plays out."
+    
+# print (place_bet(input("Please place a bet within your wallet. It will be doubled if you win and lost if you lose:\n $")))
+  
+def dealing ():
+  random_card = random.choice(card)
+  dealer_hand = random_card + "[ ]"
+  user_hand = random_card + "[ ]"
+  return "Dealer: " + dealer_hand + \n"User: " + user_hand
+  
+print(dealing())
